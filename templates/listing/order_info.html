@@ -10,10 +10,12 @@
 
   <form method="post" action="{% url 'saveorder' %}">
       {% csrf_token %}
-      <div><label>Quantity</label>
-      <input type="text" id="quantity" name="quantity" placeholder="" Required>
+      <div><label>Stock Name</label>
+          <input type="text" id="stock" name="stock" placeholder="" Required>
+          <div><label>Quantity</label>
+              <input type="text" id="quantity" name="quantity" placeholder="" Required>
       </div>
-
+      </div>
       <input type="submit">
 
   </form>

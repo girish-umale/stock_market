@@ -38,7 +38,7 @@ def save_order(request):
     if request.method == 'POST':
         quantity = request.POST.get('quantity')
         user = request.POST.get('user')
-        stock = request.POST.get('title')
+        stock = request.POST.get('stock')
         data = Order(quantity=quantity, user=user, stock=stock)
         data.save()
 

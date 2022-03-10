@@ -48,5 +48,5 @@ class Stock(models.Model):
 class Order(models.Model):
     quantity = models.IntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    stock = models.ForeignKey(Stock, on_delete=models.CASCADE)
+    stock = models.CharField(max_length=30, default=Stock.title)
 
