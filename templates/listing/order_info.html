@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Market</title>
+</head>
+<body>
+<center><h1>Save Order Information</h1></center>
+  <hr>
+
+  <form method="post" action="/save/">
+      {% csrf_token %}
+      <div><label>Quantity</label>
+      <input type="text" id="quantity" name="quantity" placeholder="" Required>
+      </div>
+
+      <input type="submit">
+
+  </form>
+</body>
+</html>

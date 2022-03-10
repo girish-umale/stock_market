@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Market</title>
+</head>
+<body>
+    {% extends 'search/search_view.html' %}
+    {% if user.is_authenticated %}
+                    <h1>{{ obj.title }}</h1> <br/>
+                    <h2><u>Description:</u></h2>
+                    <p>{{ obj.description|linebreaks }}</p>
+                    <h2>Price:  ₹{{ obj.price }}</h2>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Market</title>
+</head>
+<body>
+
+{% extends 'search/search_view.html' %}
+{% if user.is_authenticated %}
+{% if Object_list %}
+        <div >Place order by filling details.</div>
+<br><br>
+    <table border="1">
+        <thead>
+        <th>Stock Name</th>
+        <th>Stock Price</th>
+        <th>Action</th>
+        </thead>
+        <tbody>
+        {% for stk in Object_list %}
+        <tr>
+            <td>{{ stk.title }}</td>
+            <td>{{ stk.price }}</td>
+            <td>
+                <a href="/save">PLACE ORDER</a>
+            </td>
+        </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+        <div >Sorry that stock is not found!</div>
+    {% endif %}
+
+{% else %}
+        <div >Sorry. Please sign in to view stock listing</div>
+<br>
+    <button type="submit"><a href="/signin">Sign In</a></button>
+    <br><br>
+    <button type="submit"><a href="/signup">Sign Up</a></button>
+
+{% endif %}
+</body>
+</html>

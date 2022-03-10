@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Market</title>
+</head>
+<body>
+
+<form method = 'GET' action ="{% url 'search:search' %}" class="form">
+    <input type="search" placeholder="Search.." name = 'q' aria-label="Search" value = '{{ request.GET.q }}' >
+</form>
+
+
+{% if Object_list %}
+
+    {% if request.GET.q %}
+        <div class = 'col-12'>Results for <for></for><b> {{ request.GET.q }}</b><hr/></div>
+    {% endif %}
+<br>
+<div >Place order by filling details.</div>
+<br><br>
+    <table border="1">
+        <thead>
+        <th>Stock Name</th>
+        <th>Stock Price</th>
+        <th>Action</th>
+        </thead>
+        <tbody>
+        {% for stk in Object_list %}
+        <tr>
+            <td>{{ stk.title }}</td>
+            <td>{{ stk.price }}</td>
+            <td>
+                <a href="/save">PLACE ORDER</a>
+            </td>
+        </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+        <div>Sorry that stock is not found!</div>
+{% endif %}
+
+
+</body>
+</html>
