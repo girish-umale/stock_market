@@ -5,10 +5,9 @@ from .views import (
     save_order,
 )
 
-app_name = 'stocks_url'
 
 urlpatterns = [
     path('', stock_list_view, name='show_all_stocks'),
-    path('save/', save_order, name='save_order_details'),
+    path('saveorder/', save_order, name='saveorder'),
     path('details/<int:id>/', stock_detail_view, name='stock_detail'),
 ]

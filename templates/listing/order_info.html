@@ -8,7 +8,7 @@
 <center><h1>Save Order Information</h1></center>
   <hr>
 
-  <form method="post" action="/save/">
+  <form method="post" action="{% url 'saveorder' %}">
       {% csrf_token %}
       <div><label>Quantity</label>
       <input type="text" id="quantity" name="quantity" placeholder="" Required>

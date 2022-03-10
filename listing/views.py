@@ -1,8 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from django.http import Http404
 from .models import Stock, Order
-
 
 # Create your views here.
 
@@ -36,7 +35,11 @@ def stock_detail_view(request, id):
 
 
 def save_order(request):
-    if request.method == "POST":
-        quantity = request.POST['quantity']
-        # order = Order.objects.create(quantity)
+    if request.method == 'POST':
+        quantity = request.POST.get('quantity')
+        user = request.POST.get('user')
+        stock = request.POST.get('title')
+        data = Order(quantity=quantity, user=user, stock=stock)
+        data.save()
+
     return render(request, 'listing/order_info.html')

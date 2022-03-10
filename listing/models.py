@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -45,10 +46,7 @@ class Stock(models.Model):
 
 
 class Order(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING, blank=True, null=True)
-    order_id = models.CharField(max_length=120, blank=True, unique=True)
-    stocks = models.ManyToManyField(Stock, blank=True)
-    quantity = models.IntegerField(default=1)
+    quantity = models.IntegerField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    stock = models.ForeignKey(Stock, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return f'''{self.__dict__}'''

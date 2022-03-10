@@ -9,7 +9,7 @@ Database used : sqlite3
 
 Step 1: Complete
 
-Step 2: Complete (Pop-Up functionality pending)
+Step 2: Complete
 
 Step 3: Partially complete, database data save remain.
 
@@ -17,6 +17,6 @@ Step 4: Incomplete
 
 Step 5: Complete
 
-Step 6: Not Done
+Step 6: Incomplete
 
 Step 7: Complete

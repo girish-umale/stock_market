@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Stock Market</title>
+
 </head>
 <body>
+
+
     <h3>Welcome to Stock Market</h3>
 
     {% for message in messages %}
@@ -23,6 +26,9 @@
     <button type="submit"><a href="/signout">Sign Out</a></button>
 
     {% else %}
+    <script language="JavaScript" type="text/javascript">
+        setInterval(function(){alert("Please Log In to access stock list.")},180000);
+    </script>
     <button type="submit"><a href="/signin">Sign In</a></button>
     <br><br>
     <button type="submit"><a href="/signup">Sign Up</a></button>
